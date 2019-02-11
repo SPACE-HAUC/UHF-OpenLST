@@ -1,0 +1,41 @@
+-muwx
+-i openlst_437_radio.hex
+-M
+-Y
+-I 0x0100
+-X 0x0d00
+-C 0x67e0
+-b HOME = 0x0400
+-b XSEG = 0xf000
+-b PSEG = 0xf000
+-b ISEG = 0x0000
+-b BSEG = 0x0000
+-bFLASHTRIGSEG=0x0520
+-k /usr/bin/../share/sdcc/lib/medium
+-k /usr/share/sdcc/lib/medium
+-l mcs51
+-l libsdcc
+-l libint
+-l liblong
+-l libfloat
+open-lst/radio/flash_trigger.openlst_437.asm.rel
+open-lst/common/board_defaults.openlst_437.rel
+open-lst/common/clock.openlst_437.rel
+open-lst/common/crc16.openlst_437.rel
+open-lst/common/dma.openlst_437.rel
+open-lst/common/input_handlers.openlst_437.rel
+open-lst/common/interrupts.openlst_437.rel
+open-lst/common/stringx.openlst_437.rel
+open-lst/common/radio.openlst_437.rel
+open-lst/common/uart0.openlst_437.rel
+open-lst/common/uart1.openlst_437.rel
+open-lst/common/watchdog.openlst_437.rel
+open-lst/radio/main.openlst_437.rel
+open-lst/radio/adc.openlst_437.rel
+open-lst/radio/commands.openlst_437.rel
+open-lst/radio/schedule.openlst_437.rel
+open-lst/radio/telemetry.openlst_437.rel
+open-lst/radio/timers.openlst_437.rel
+radios/openlst_437//board.openlst_437.rel
+
+-e
