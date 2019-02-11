@@ -3,6 +3,10 @@
 OpenLST is an open source, proven radio design for communicating with remote
 instruments, vehicles, and stations using low-cost commercial components.
 
+### NOTE:
+
+**In order to get `radio_terminal` working, please run `radio_mux.py /dev/ttyUSB0` (device name may vary) first by hand or enable as a startup script in systemd. See [USER_GUIDE.md](./open-lst/USERS_GUIDE.md) for more information.**
+
 ## History
 
 Planet developed the Low-Speed Transceiver (LST) for UHF telemetry, command,
