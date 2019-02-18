@@ -174,7 +174,7 @@ void radio_init(void) {
 	radio_packets_rejected_reserved = 0;
 	radio_packets_rejected_other = 0;
 	// TODO: default channel?
-	radio_set_modes(RADIO_MODE_DEFAULT_RX, RADIO_MODE_DEFAULT_TX);
+	radio_set_modes(RADIO_MODE_RANGING_RX, RADIO_MODE_RANGING_TX);
 }
 
 
