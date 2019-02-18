@@ -36,6 +36,9 @@ uint8_t commands_handle_command(const __xdata command_t *cmd, uint8_t len, __xda
 	__xdata msg_data_t *cmd_data;
 	__xdata msg_data_t *reply_data;
 
+	__xdata radio_echo_t *olst_echo;
+	__xdata radio_echo_t *olst_echo_rx;
+
 	__xdata radio_callsign_t *olst_callsign;
 	__xdata radio_callsign_t olst_callsign_rx;
 
@@ -124,10 +127,16 @@ uint8_t commands_handle_command(const __xdata command_t *cmd, uint8_t len, __xda
 			reply_length += sizeof(*olst_callsign);
 		break;
 
-		case radio_msg_ascii:
-			reply->header.command = radio_msg_ascii_msg;
-			reply_length += sizeof(cmd->data);
+		case radio_msg_echo:
+			reply->header.command = radio_msg_echo_msg;
+			olst_echo = (__xdata radio_echo_t *) cmd->data;
 
+			memsetx((__xdata char *) olst_echo_rx, 0, sizeof(*olst_echo));
+			memcpyx(	(__xdata void *) &olst_echo_rx,
+				(__xdata void *) olst_echo,
+				sizeof(*olst_echo));
+			reply_length += sizeof(*olst_echo);
+		break;
 
 		#if RADIO_RANGING_RESPONDER == 1
 		case radio_msg_ranging:
