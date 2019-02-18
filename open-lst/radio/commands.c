@@ -124,6 +124,11 @@ uint8_t commands_handle_command(const __xdata command_t *cmd, uint8_t len, __xda
 			reply_length += sizeof(*olst_callsign);
 		break;
 
+		case radio_msg_ascii:
+			reply->header.command = radio_msg_ascii_msg;
+			reply_length += sizeof(cmd->data);
+
+
 		#if RADIO_RANGING_RESPONDER == 1
 		case radio_msg_ranging:
 			reply->header.command = radio_msg_ranging_ack;
