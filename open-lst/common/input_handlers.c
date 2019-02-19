@@ -95,6 +95,7 @@ void input_handle_uart1_rx(void) {
 		reply_len = commands_handle_command(&buffer.cmd, len, &reply.cmd);
 		if (reply_len) {
 			uart1_send_message(reply.msg, reply_len);
+			radio_send_packet(&buffer.cmd, reply_len, RF_TIMING_NOW, 1);
 		}
 		return;
 	} else {
