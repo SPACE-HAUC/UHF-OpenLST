@@ -30,8 +30,6 @@ REBOOT = '\x12'
 GET_CALLSIGN = '\x19'
 SET_CALLSIGN = '\x1a'
 CALLSIGN = '\x1b'
-ECHO = '\x1c'
-ECHO_MSG = '\x1d'
 GET_TELEM = '\x17'
 TELEM = '\x18'
 GET_TIME = '\x13'
@@ -305,8 +303,6 @@ COMMANDS = [
             UInt32Argument("custom0"),
             UInt32Argument("custom1")),
     Command("ascii", ASCII, StringArgument("text")),
-    Command("echo", ECHO),
-    Command("echo_msg", ECHO_MSG, StringArgument("text")),
 ]
 
 
