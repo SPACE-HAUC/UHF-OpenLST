@@ -54,8 +54,8 @@ volatile __bit rf_mode_tx = 0;  // controls whether the rftxrx ISR is transmitti
 
 void radio_set_modes(uint8_t rx_mode, uint8_t tx_mode) {
   // Get register sets from board-specific functionality
-	radio_mode_rx = 0;
-	radio_mode_tx = 0;
+	radio_mode_rx = rx_mode;
+	radio_mode_tx = tx_mode;
 }
 
 

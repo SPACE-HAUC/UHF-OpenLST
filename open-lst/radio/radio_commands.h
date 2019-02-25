@@ -22,45 +22,45 @@
 #include "telemetry.h"
 
 typedef enum {
-	radio_msg_reboot       = 0x12,
-	radio_msg_get_time     = 0x13,
-	radio_msg_set_time     = 0x14,
-	radio_msg_ranging      = 0x15,
-	radio_msg_ranging_ack  = 0x16,
-	radio_msg_get_telem    = 0x17,
-	radio_msg_telem        = 0x18,
-	radio_msg_get_callsign = 0x19,
-	radio_msg_set_callsign = 0x1a,
-	radio_msg_callsign     = 0x1b,
-	radio_msg_ascii 	   = 0x1c
+    radio_msg_reboot       = 0x12,
+    radio_msg_get_time     = 0x13,
+    radio_msg_set_time     = 0x14,
+    radio_msg_ranging      = 0x15,
+    radio_msg_ranging_ack  = 0x16,
+    radio_msg_get_telem    = 0x17,
+    radio_msg_telem        = 0x18,
+    radio_msg_get_callsign = 0x19,
+    radio_msg_set_callsign = 0x1a,
+    radio_msg_callsign     = 0x1b,
+    radio_msg_ascii        = 0x1c
 } radio_msg_no;
 
 #define RANGING_ACK_TYPE 1
 #define RANGING_ACK_VERSION 1
 
 typedef struct {
-	uint8_t ack_type;
-	uint8_t ack_version;
+    uint8_t ack_type;
+    uint8_t ack_version;
 } radio_ranging_ack_t;
 
 typedef struct {
-	uint32_t postpone_sec;
+    uint32_t postpone_sec;
 } reboot_postpone_t;
 
 typedef struct {
-	char msg_data[128];
+    char msg_data[64];
 } radio_ascii_t;
 
 typedef union {
-	timespec_t time;
-	radio_ranging_ack_t ranging_ack;
-	reboot_postpone_t reboot_postpone;
-	telemetry_t telemetry;
-	uint8_t data[1];
+    timespec_t time;
+    radio_ranging_ack_t ranging_ack;
+    reboot_postpone_t reboot_postpone;
+    telemetry_t telemetry;
+    uint8_t data[1];
 } msg_data_t;
 
-typedef struct radio_callsign{
-	char callsign[8];
+typedef struct radio_callsign {
+    char callsign[8];
 } radio_callsign_t;
 
 #endif
