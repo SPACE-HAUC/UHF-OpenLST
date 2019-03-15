@@ -200,13 +200,13 @@
 #define RF_FSCTRL0 0x00
 #endif
 #ifndef RF_FREQ2
-#define RF_FREQ2 0x22 //34
+#define RF_FREQ2 0x10
 #endif
 #ifndef RF_FREQ1
-#define RF_FREQ1 0xB1 //177
+#define RF_FREQ1 0x2F
 #endif
 #ifndef RF_FREQ0
-#define RF_FREQ0 0x3B //59
+#define RF_FREQ0 0x68
 #endif
 // The defaults here are the CC1110 hard defaults
 #ifndef RF_SYNC_WORD1
@@ -261,7 +261,7 @@
 #define RF_DEVIATN_E 1
 #endif
 #ifndef RF_DEVIATN_M
-#define RF_DEVIATN_M 1
+#define RF_DEVIATN_M 0
 #endif
 // 9887 Hz difference between symbols
 #ifndef RF_DEVIATN_RANGING_E
@@ -272,7 +272,7 @@
 #endif
 // From SmartRF studio
 #ifndef RF_FSCAL3_CONFIG
-#define RF_FSCAL3_CONFIG 234
+#define RF_FSCAL3_CONFIG 169
 #endif
 #ifndef RF_FSCAL2_CONFIG
 #define RF_FSCAL2_CONFIG 10
@@ -281,7 +281,7 @@
 #define RF_FSCAL1_CONFIG 0
 #endif
 #ifndef RF_FSCAL0_CONFIG
-#define RF_FSCAL0_CONFIG 11
+#define RF_FSCAL0_CONFIG 31
 #endif
 #ifndef RF_TEST0_CONFIG
 #define RF_TEST0_CONFIG  9
